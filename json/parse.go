@@ -1,4 +1,4 @@
-package main
+package json
 
 // Node the base node type
 type Node interface {

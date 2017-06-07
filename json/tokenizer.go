@@ -1,4 +1,4 @@
-package main
+package json
 
 import (
 	"bytes"
@@ -67,8 +67,9 @@ func (t *Tokenizer) scanString() (string, error) {
 		case r == '"' && !hasBackslash:
 			buffer.WriteRune(r)
 			return buffer.String(), nil // TODO: handle errors
+		default:
+			hasBackslash = false
 		}
-		hasBackslash = false
 		buffer.WriteRune(r)
 	}
 }

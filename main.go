@@ -10,6 +10,10 @@ import (
 
 func main() {
 	args := os.Args[1:]
+	if len(args) < 1 {
+		fmt.Printf("Please provide a filename\n")
+		os.Exit(1)
+	}
 	var s scanner.Scanner
 	f, err := os.Open(args[0])
 	if err != nil {
